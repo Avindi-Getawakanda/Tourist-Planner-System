@@ -371,12 +371,10 @@ img { display: block; width: 100%; }
   letter-spacing: 0.5px;
 }
 
-/* ══════════════════════════════════════════════════════
-   QUOTE SECTION
-══════════════════════════════════════════════════════ */
+
 .quote-section {
   background: var(--ivory2);
-  padding: 80px 40px;
+  padding: 55px 40px;
 }
 
 .quote-section__inner {
@@ -410,12 +408,10 @@ img { display: block; width: 100%; }
   letter-spacing: 0.2px;
 }
 
-/* ══════════════════════════════════════════════════════
-   HOW IT WORKS
-══════════════════════════════════════════════════════ */
+
 .hiw {
   background: var(--ivory);
-  padding: 100px 0;
+  padding: 70px 0;
 }
 
 .hiw__inner {
@@ -507,9 +503,6 @@ img { display: block; width: 100%; }
   display: none;
 }
 
-/* ══════════════════════════════════════════════════════
-   CATEGORIES
-══════════════════════════════════════════════════════ */
 .cats {
   background: var(--ivory2);
   padding: 100px 0;
@@ -631,16 +624,13 @@ img { display: block; width: 100%; }
   text-align: center;
 }
 
-/* ══════════════════════════════════════════════════════
-   CTA BANNER
-══════════════════════════════════════════════════════ */
 .cta-banner {
   position: relative;
   background-image: url('../images/hero.jpg');
   background-size: cover;
   background-position: center 60%;
   background-attachment: fixed;
-  padding: 110px 40px;
+  padding: 70px 40px;
   text-align: center;
   overflow: hidden;
 }
@@ -683,9 +673,6 @@ img { display: block; width: 100%; }
   line-height: 1.7;
 }
 
-/* ══════════════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════════════ */
 .site-footer {
   background: var(--navy);
   color: rgba(255,255,255,0.7);
@@ -693,11 +680,11 @@ img { display: block; width: 100%; }
 
 .site-footer__top {
   border-top: 1px solid rgba(201,166,70,0.3);
-  padding: 70px 0 50px;
+  padding: 50px 0 50px;
 }
 
 .site-footer__inner {
-  max-width: 1180px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
@@ -799,13 +786,10 @@ img { display: block; width: 100%; }
   text-align: center;
   font-size: 0.78rem;
   color: rgba(255,255,255,0.3);
-  max-width: 1180px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
-/* ══════════════════════════════════════════════════════
-   ANIMATIONS
-══════════════════════════════════════════════════════ */
 
 /* Fade up */
 @keyframes fadeUp {
@@ -826,7 +810,7 @@ img { display: block; width: 100%; }
 
 .js-ready .reveal-section {
   opacity: 0;
-  transform: translateY(36px);
+  transform: translateY(16px);
   transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1),
               transform 0.9s cubic-bezier(0.22,1,0.36,1);
 }
@@ -853,7 +837,6 @@ img { display: block; width: 100%; }
   opacity: 1;
 }
 
-/* Card stagger reveal */
 .reveal-card {
   opacity: 1;
   transform: translateY(0);
@@ -871,9 +854,6 @@ img { display: block; width: 100%; }
   transform: translateY(0);
 }
 
-/* ══════════════════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════════════════ */
 
 @media (max-width: 1024px) {
   .about__inner {
