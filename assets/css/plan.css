@@ -1,0 +1,15 @@
+
+.plan-thumb {
+  width: 70px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.plan-num { min-width: 28px; color: var(--navy); }
+
+.list-group-item {
+  border-left: none;
+  border-right: none;
+  border-color: #e8eef5;
+}

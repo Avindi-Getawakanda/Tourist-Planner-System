@@ -7,119 +7,272 @@ $page_title = 'Home';
 require_once __DIR__ . '/partials/header.php';
 ?>
 
-<!-- ── HERO ─────────────────────────────────────────────────── -->
-<section class="hero-section">
-  <div class="hero-overlay"></div>
-  <div class="hero-content text-center text-white">
-    <p class="hero-sub animate-fade-up" style="animation-delay:0.1s">Sri Lanka • Kelaniya</p>
-    <h1 class="hero-title animate-fade-up" style="animation-delay:0.3s">
-      Your Perfect<br><span class="hero-highlight">Day Awaits</span>
-    </h1>
-    <p class="hero-desc animate-fade-up" style="animation-delay:0.5s">
-      Ancient temples · Lush parks · Hidden beaches
+
+<section class="hero" id="hero">
+  <div class="hero__overlay"></div>
+  <div class="hero__particles" id="heroParticles"></div>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow">
+      <span class="hero__line"></span>
+      Sri Lanka &nbsp;·&nbsp; Kelaniya
+      <span class="hero__line"></span>
     </p>
-    <div class="hero-btns animate-fade-up" style="animation-delay:0.7s">
-      <a href="index.php?page=places" class="btn btn-gold btn-lg px-5 py-3 me-2">
-        <i class="bi bi-compass me-2"></i>Explore Places
+    <h1 class="hero__title">
+      Your Perfect<br>
+      <em class="hero__title-gold">Day Awaits</em>
+    </h1>
+    <p class="hero__sub">Ancient temples &nbsp;·&nbsp; Lush parks &nbsp;·&nbsp; Hidden escapes</p>
+    <div class="hero__btns">
+      <a href="index.php?page=places" class="btn-primary-gold">
+        <i class="bi bi-compass"></i> Explore Places
       </a>
-      <a href="index.php?page=plan" class="btn btn-outline-light btn-lg px-4 py-3">
-        <i class="bi bi-calendar2-check me-2"></i>My Plan
+      <a href="index.php?page=plan" class="btn-outline-ivory">
+        <i class="bi bi-calendar2-check"></i> My Plan
+        <?php if ($plan_count > 0): ?>
+          <span class="plan-badge"><?php echo $plan_count; ?></span>
+        <?php endif; ?>
       </a>
     </div>
   </div>
-  <!-- Scroll arrow -->
-  <div class="hero-scroll-arrow">
-    <i class="bi bi-chevron-down"></i>
+
+  <div class="hero__scroll-cue">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
   </div>
 </section>
 
-<!-- ── STATS BAR ──────────────────────────────────────────────── -->
-<section class="stats-bar">
-  <div class="container">
-    <div class="row text-center g-0">
-      <div class="col-4">
-        <div class="stat-item" data-count="10">
-          <div class="stat-number" id="stat1">10+</div>
-          <div class="stat-label">Tourist Spots</div>
+
+<section class="about reveal-section">
+  <div class="about__inner">
+
+    <div class="about__text">
+      <p class="label-gold">About Kelaniya</p>
+      <h2 class="about__heading">A Sacred Town<br>Worth Exploring</h2>
+      <div class="about__divider"></div>
+      <p class="about__body">
+        Just minutes from Colombo, Kelaniya is home to one of Sri Lanka's most revered
+        Buddhist temples — believed to have been visited by the Buddha himself. It is
+        the gateway to some of the island's most memorable day trips: ancient shrines,
+        lush riverside parks, world-class museums and golden beaches.
+      </p>
+      <p class="about__body">
+        Whether you seek spirituality, nature, history or adventure, this
+        sacred corner of Sri Lanka delivers it all.
+      </p>
+      <a href="index.php?page=places" class="btn-outline-navy">
+        Discover All Places <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="about__collage">
+      <div class="collage__main reveal-img">
+        <img src="assets/images/kelaniya_temple.jpg"
+             onerror="this.src='assets/images/default.jpg'"
+             alt="Kelaniya Temple">
+        <div class="collage__caption">Kelaniya Raja Maha Vihara</div>
+      </div>
+      <div class="collage__stack">
+        <div class="collage__sm reveal-img" style="--delay:0.15s">
+          <img src="assets/images/gangaramaya.jpg"
+               onerror="this.src='assets/images/default.jpg'"
+               alt="Gangaramaya Temple">
+          <div class="collage__caption">Gangaramaya Temple</div>
+        </div>
+        <div class="collage__sm reveal-img" style="--delay:0.3s">
+          <img src="assets/images/beira_lake.jpg"
+               onerror="this.src='assets/images/default.jpg'"
+               alt="Beira Lake">
+          <div class="collage__caption">Beira Lake, Colombo</div>
         </div>
       </div>
-      <div class="col-4">
-        <div class="stat-item border-stat">
-          <div class="stat-number">6</div>
-          <div class="stat-label">Categories</div>
-        </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="quote-section reveal-section">
+  <div class="quote-section__inner">
+    <div class="quote-ornament">
+      <i class="bi bi-flower1"></i>
+    </div>
+    <div class="quote-rule"></div>
+    <blockquote class="quote-text">
+      "From sacred landmarks to hidden escapes, Kelaniya offers more than
+      a destination — it offers a day worth remembering."
+    </blockquote>
+    <div class="quote-rule"></div>
+    <div class="quote-ornament">
+      <i class="bi bi-flower1"></i>
+    </div>
+  </div>
+</section>
+
+
+<section class="hiw reveal-section">
+  <div class="hiw__inner">
+    <div class="hiw__header">
+      <p class="label-gold">How It Works</p>
+      <h2 class="hiw__heading">Plan Beautifully,<br>Explore Effortlessly</h2>
+    </div>
+
+    <div class="hiw__steps">
+      <div class="hiw__step reveal-card" style="--delay:0s">
+        <div class="hiw__num">01</div>
+        <div class="hiw__icon"><i class="bi bi-map"></i></div>
+        <h5 class="hiw__title">Browse Places</h5>
+        <p class="hiw__desc">Explore top attractions, filter by category, and find the places that inspire you.</p>
+        <div class="hiw__connector"></div>
       </div>
-      <div class="col-4">
-        <div class="stat-item">
-          <div class="stat-number">Free</div>
-          <div class="stat-label">Trip Planner</div>
-        </div>
+      <div class="hiw__step hiw__step--featured reveal-card" style="--delay:0.12s">
+        <div class="hiw__num">02</div>
+        <div class="hiw__icon"><i class="bi bi-calendar2-check"></i></div>
+        <h5 class="hiw__title">Build Your Plan</h5>
+        <p class="hiw__desc">Add your favourite places to your itinerary and see estimated time and travel details.</p>
+        <div class="hiw__connector"></div>
+      </div>
+      <div class="hiw__step reveal-card" style="--delay:0.24s">
+        <div class="hiw__num">03</div>
+        <div class="hiw__icon"><i class="bi bi-geo-alt"></i></div>
+        <h5 class="hiw__title">Go Explore</h5>
+        <p class="hiw__desc">Follow your plan and enjoy a seamless, unforgettable day in Kelaniya.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FEATURES + CTA ─────────────────────────────────────────── -->
-<section class="features-section py-5">
-  <div class="container">
-    <div class="row g-4 align-items-center">
 
-      <!-- Feature cards -->
-      <div class="col-lg-7">
-        <p class="section-eyebrow">Why Use This</p>
-        <h2 class="section-heading mb-4">Plan Smarter,<br>Travel Better</h2>
-        <div class="row g-3">
-          <div class="col-sm-6">
-            <div class="feat-card p-4 animate-on-scroll">
-              <i class="bi bi-geo-alt-fill feat-icon mb-3"></i>
-              <h6 class="fw-bold">Curated Places</h6>
-              <p class="text-muted small mb-0">Hand-picked spots with real details — hours, fees, tips and maps.</p>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="feat-card p-4 animate-on-scroll" style="animation-delay:0.1s">
-              <i class="bi bi-funnel-fill feat-icon mb-3"></i>
-              <h6 class="fw-bold">Filter by Category</h6>
-              <p class="text-muted small mb-0">Temples, beaches, parks, museums — find exactly what you want.</p>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="feat-card p-4 animate-on-scroll" style="animation-delay:0.2s">
-              <i class="bi bi-map-fill feat-icon mb-3"></i>
-              <h6 class="fw-bold">Live Maps</h6>
-              <p class="text-muted small mb-0">See every place on an interactive map with your exact location.</p>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="feat-card p-4 animate-on-scroll" style="animation-delay:0.3s">
-              <i class="bi bi-calendar2-check-fill feat-icon mb-3"></i>
-              <h6 class="fw-bold">Day Planner</h6>
-              <p class="text-muted small mb-0">Build your itinerary, track total costs and time — all in one place.</p>
-            </div>
-          </div>
+<section class="cats reveal-section">
+  <div class="cats__inner">
+    <div class="cats__header">
+      <p class="label-gold">Explore by Category</p>
+      <h2 class="cats__heading">Choose Your Kind<br>of Escape</h2>
+    </div>
+
+    <div class="cats__grid">
+      <a href="index.php?page=places&category=1" class="cat-card reveal-card" style="--delay:0s">
+        <img src="assets/images/kelaniya_temple.jpg"
+             onerror="this.src='assets/images/default.jpg'" alt="Religious">
+        <div class="cat-card__overlay"></div>
+        <div class="cat-card__body">
+          <i class="bi bi-moon-stars-fill cat-card__icon"></i>
+          <h5 class="cat-card__title">Religious</h5>
+          <p class="cat-card__desc">Sacred temples and spiritual places.</p>
+          <span class="cat-card__link">Explore <i class="bi bi-arrow-right"></i></span>
         </div>
-      </div>
-
-      <!-- CTA card -->
-      <div class="col-lg-5">
-        <div class="cta-card text-center p-5 animate-on-scroll">
-          <i class="bi bi-map-fill cta-icon mb-3"></i>
-          <h3 class="fw-bold text-white mb-2">Ready to Explore?</h3>
-          <p class="text-white-50 mb-4">Browse 10+ handpicked destinations<br>and build your perfect day plan.</p>
-          <a href="index.php?page=places" class="btn btn-gold btn-lg w-100 mb-3">
-            <i class="bi bi-arrow-right-circle me-2"></i>Start Exploring
-          </a>
-          <a href="index.php?page=plan" class="btn btn-outline-light w-100">
-            <i class="bi bi-calendar2-check me-2"></i>View My Plan
-            <?php if ($plan_count > 0): ?>
-              <span class="badge bg-warning text-dark ms-1"><?php echo $plan_count; ?></span>
-            <?php endif; ?>
-          </a>
+      </a>
+      <a href="index.php?page=places&category=2" class="cat-card reveal-card" style="--delay:0.1s">
+        <img src="assets/images/viharamahadevi.jpg"
+             onerror="this.src='assets/images/default.jpg'" alt="Nature">
+        <div class="cat-card__overlay"></div>
+        <div class="cat-card__body">
+          <i class="bi bi-tree-fill cat-card__icon"></i>
+          <h5 class="cat-card__title">Nature</h5>
+          <p class="cat-card__desc">Parks, gardens and natural beauty.</p>
+          <span class="cat-card__link">Explore <i class="bi bi-arrow-right"></i></span>
         </div>
-      </div>
+      </a>
+      <a href="index.php?page=places&category=3" class="cat-card reveal-card" style="--delay:0.2s">
+        <img src="assets/images/independence_hall.jpg"
+             onerror="this.src='assets/images/default.jpg'" alt="Heritage">
+        <div class="cat-card__overlay"></div>
+        <div class="cat-card__body">
+          <i class="bi bi-bank2 cat-card__icon"></i>
+          <h5 class="cat-card__title">Heritage</h5>
+          <p class="cat-card__desc">Historical sites and cultural landmarks.</p>
+          <span class="cat-card__link">Explore <i class="bi bi-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="index.php?page=places&category=4" class="cat-card reveal-card" style="--delay:0.3s">
+        <img src="assets/images/colombo_museum.jpg"
+             onerror="this.src='assets/images/default.jpg'" alt="Cultural">
+        <div class="cat-card__overlay"></div>
+        <div class="cat-card__body">
+          <i class="bi bi-building cat-card__icon"></i>
+          <h5 class="cat-card__title">Cultural</h5>
+          <p class="cat-card__desc">Arts, museums and local experiences.</p>
+          <span class="cat-card__link">Explore <i class="bi bi-arrow-right"></i></span>
+        </div>
+      </a>
+    </div>
 
+    <div class="cats__cta">
+      <a href="index.php?page=places" class="btn-outline-navy">
+        View All Places <i class="bi bi-arrow-right"></i>
+      </a>
     </div>
   </div>
 </section>
 
-<?php require_once __DIR__ . '/partials/footer.php'; ?>
+
+<section class="cta-banner reveal-section">
+  <div class="cta-banner__overlay"></div>
+  <div class="cta-banner__inner">
+    <div class="cta-banner__icon"><i class="bi bi-compass"></i></div>
+    <h2 class="cta-banner__heading">Ready to Discover Kelaniya?</h2>
+    <p class="cta-banner__sub">Plan your perfect day and make memories that last a lifetime.</p>
+    <a href="index.php?page=places" class="btn-primary-gold">
+      Start Your Plan <i class="bi bi-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div class="site-footer__inner">
+
+      <div class="footer-col footer-col--brand">
+        <div class="footer-logo">
+          <i class="bi bi-map-fill"></i> Visit Kelaniya
+        </div>
+        <p class="footer-tagline">
+          Your trusted travel companion for exploring the best places within 25 km of Kelaniya, Sri Lanka.
+        </p>
+        <div class="footer-social">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h6 class="footer-col__title">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="index.php">Home</a></li>
+          <li><a href="index.php?page=places">Places</a></li>
+          <li><a href="index.php?page=plan">My Plan</a></li>
+          <li><a href="#">About Kelaniya</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h6 class="footer-col__title">Categories</h6>
+        <ul class="footer-links">
+          <li><a href="index.php?page=places&category=1">Religious</a></li>
+          <li><a href="index.php?page=places&category=2">Nature</a></li>
+          <li><a href="index.php?page=places&category=3">Heritage</a></li>
+          <li><a href="index.php?page=places&category=4">Cultural</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h6 class="footer-col__title">Contact</h6>
+        <ul class="footer-links footer-links--contact">
+          <li><i class="bi bi-geo-alt-fill"></i> Kelaniya, Sri Lanka</li>
+          <li><i class="bi bi-telephone-fill"></i> +94 71 123 4567</li>
+          <li><i class="bi bi-envelope-fill"></i> info@visitkelaniya.lk</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <p>&copy; <?php echo date('Y'); ?> Visit Kelaniya. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="assets/js/home.js"></script>
+</body>
+</html>
